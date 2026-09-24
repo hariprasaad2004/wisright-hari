@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Positioning Project</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 80px;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Fixed header */
+
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 100;
+
+            height: 80px;
+            padding: 20px;
+
+            color: white;
+            background-color: #2563eb;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Page layout */
+
+        .page-container {
+            display: flex;
+            gap: 30px;
+
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Sticky sidebar */
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+
+            width: 250px;
+            height: fit-content;
+            padding: 20px;
+
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 8px 0;
+
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Card */
+
+        .card {
+            position: relative;
+
+            margin-bottom: 30px;
+            padding: 20px;
+
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Absolute badge */
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            background-color: red;
+        }
+
+        /* Scrollable container */
+
+        .scroll-container {
+            height: 300px;
+            padding: 20px;
+
+            overflow: auto;
+
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        /* Floating action button */
+
+        .fab {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 500;
+
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            background-color: #3498db;
+
+            font-size: 30px;
+            text-decoration: none;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal overlay */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+
+            background-color: rgba(0, 0, 0, 0.6);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal-overlay:target {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Centered modal */
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 1000;
+
+            width: 90%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+
+            background-color: white;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+
+            color: #333333;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .page-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed header -->
+
+    <header class="header">
+        <h1>CSS Positioning Project</h1>
+    </header>
+
+    <main class="page-container">
+
+        <!-- Sticky sidebar -->
+
+        <aside class="sidebar">
+            <h2>Topics</h2>
+
+            <a href="#card-section">Card</a>
+            <a href="#scroll-section">Overflow</a>
+            <a href="#contact-modal">Modal</a>
+        </aside>
+
+        <div class="content">
+
+            <!-- Relative card and absolute badge -->
+
+            <section class="card" id="card-section">
+                <span class="badge">3</span>
+
+                <h2>Notification Card</h2>
+
+                <p>
+                    The card uses relative positioning and the badge
+                    uses absolute positioning.
+                </p>
+            </section>
+
+            <!-- Scrollable content -->
+
+            <section class="scroll-container" id="scroll-section">
+                <h2>Scrollable Content</h2>
+
+                <p>
+                    This container has a fixed height and uses
+                    overflow auto.
+                </p>
+
+                <p>
+                    When the content exceeds the container height,
+                    a scrollbar appears automatically.
+                </p>
+
+                <p>
+                    CSS positioning controls where elements appear
+                    on the webpage.
+                </p>
+
+                <p>
+                    Fixed elements stay relative to the browser viewport.
+                </p>
+
+                <p>
+                    Sticky elements stick after reaching a scroll position.
+                </p>
+
+                <p>
+                    Absolute elements are positioned relative to their
+                    nearest positioned parent.
+                </p>
+
+                <p>
+                    The z-index property controls the stacking order.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating action button -->
+
+    <a href="#contact-modal" class="fab" aria-label="Open modal">
+        +
+    </a>
+
+    <!-- Modal -->
+
+    <div class="modal-overlay" id="contact-modal">
+        <section class="modal">
+            <a href="#" class="close-button" aria-label="Close modal">
+                &times;
+            </a>
+
+            <h2>Contact Modal</h2>
+
+            <p>
+                This modal uses fixed positioning and z-index.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

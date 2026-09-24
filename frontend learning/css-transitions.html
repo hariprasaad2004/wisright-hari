@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Transition Example</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .card {
+            width: 300px;
+            padding: 30px;
+            text-align: center;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+
+            /* Smooth transitions */
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            background-color: #dbeafe;
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgb(0 0 0 / 20%);
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            color: white;
+            background-color: #2563eb;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+
+            /* Button transitions */
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1e40af;
+            transform: scale(1.08);
+        }
+              * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: #2563eb;
+            border-radius: 15px;
+            cursor: pointer;
+
+            /* Smooth rotation and color change */
+            transition:
+                transform 1s ease-in-out,
+                background-color 1s ease-in-out,
+                border-radius 1s ease-in-out,
+                box-shadow 1s ease-in-out;
+        }
+
+        .color-box:hover {
+            background-color: #e11d48;
+            transform: rotate(360deg) scale(1.1);
+            border-radius: 50%;
+            box-shadow: 0 12px 30px rgb(225 29 72 / 40%);
+        }
+    </style>
+</head>
+
+<body>
+    <article class="card">
+        <h2>Transition Card</h2>
+        <p>Move the mouse over this card to see the transition.</p>
+        <button class="button">Hover Me</button>
+    </article>
+        <div class="color-box">
+        Hover Me
+    </div>
+</body>
+</html>

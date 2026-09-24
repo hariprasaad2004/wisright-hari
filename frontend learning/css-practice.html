@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Enables responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Practice Page</title>
+
+    <style>
+        /* =========================
+           1. CSS RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+            background-color: #f1f5f9;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           2. REUSABLE STYLES
+        ========================== */
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-inline: auto;
+            padding-inline: clamp(1rem, 4vw, 2.5rem);
+        }
+
+        .section {
+            padding-block: clamp(3rem, 7vw, 6rem);
+        }
+
+        .section-title {
+            margin-bottom: 2rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            text-align: center;
+        }
+
+        /* =========================
+           3. RESPONSIVE NAVIGATION
+        ========================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #0f172a;
+        }
+
+        .nav-container {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        /* Hide checkbox */
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            min-width: 44px;
+            min-height: 44px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            left: 0;
+            padding: 1.5rem;
+            background-color: #0f172a;
+            list-style: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Open mobile navigation */
+        .menu-toggle:checked ~ .nav-links {
+            display: flex;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Sliding underline */
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: #38bdf8;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        /* =========================
+           4. HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 70vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 7vw, 4.5rem);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            max-width: 65ch;
+            margin: 1.5rem auto;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .button {
+            display: inline-block;
+            min-height: 44px;
+            padding: 12px 24px;
+            color: #2563eb;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+
+            transition:
+                color 0.3s ease-out,
+                background-color 0.3s ease-out,
+                transform 0.3s ease-out,
+                box-shadow 0.3s ease-out;
+        }
+
+        .button:hover {
+            color: white;
+            background-color: transparent;
+            transform: scale(1.05) rotate(2deg) translateY(-2px);
+            box-shadow: 0 10px 20px rgb(0 0 0 / 25%);
+        }
+
+        /* =========================
+           5. RESPONSIVE CARD GRID
+        ========================== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            overflow: hidden;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgb(0 0 0 / 20%);
+        }
+
+        .image-container {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            color: #475569;
+        }
+
+        /* =========================
+           6. TRANSFORM EXAMPLES
+        ========================== */
+
+        .transform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .transform-box {
+            min-height: 130px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background-color: #2563eb;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition:
+                transform 0.5s ease,
+                background-color 0.5s ease;
+        }
+
+        .translate:hover {
+            transform: translateY(-15px);
+            background-color: #0891b2;
+        }
+
+        .rotate:hover {
+            transform: rotate(360deg);
+            background-color: #7c3aed;
+        }
+
+        .scale:hover {
+            transform: scale(1.1);
+            background-color: #16a34a;
+        }
+
+        .skew:hover {
+            transform: skewX(15deg);
+            background-color: #e11d48;
+        }
+
+        /* =========================
+           7. CSS ANIMATIONS
+        ========================== */
+
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        /* Spinning loader */
+        .loader {
+            width: 70px;
+            height: 70px;
+            border: 8px solid #cbd5e1;
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Pulsing effect */
+        .pulse {
+            width: 80px;
+            height: 80px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background-color: #e11d48;
+            border-radius: 50%;
+            font-weight: 700;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        /* Pause animation on hover */
+        .pulse:hover,
+        .loader:hover {
+            animation-play-state: paused;
+        }
+
+        /* =========================
+           8. FLIP CARD
+        ========================== */
+
+        .flip-card {
+            width: 300px;
+            max-width: 100%;
+            height: 200px;
+            margin-inline: auto;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            padding: 1.5rem;
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #2563eb;
+        }
+
+        .flip-card-back {
+            background-color: #7c3aed;
+            transform: rotateY(180deg);
+        }
+
+        /* =========================
+           9. FOOTER
+        ========================== */
+
+        .footer {
+            padding: 2rem;
+            color: white;
+            background-color: #0f172a;
+            text-align: center;
+        }
+
+        /* =========================
+           10. TABLET BREAKPOINT
+        ========================== */
+
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+                position: static;
+                padding: 0;
+                background-color: transparent;
+                flex-direction: row;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .transform-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .image-container {
+                height: 250px;
+            }
+        }
+
+        /* =========================
+           11. DESKTOP BREAKPOINT
+        ========================== */
+
+        @media (min-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* =========================
+           12. REDUCED MOTION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav class="container nav-container" aria-label="Primary navigation">
+            <a href="#home" class="logo">CSS Practice</a>
+
+            <input
+                type="checkbox"
+                id="menu-toggle"
+                class="menu-toggle"
+            >
+
+            <label
+                for="menu-toggle"
+                class="hamburger"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#cards" class="nav-link">Cards</a></li>
+                <li><a href="#transforms" class="nav-link">Transforms</a></li>
+                <li><a href="#animations" class="nav-link">Animations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero section" id="home">
+            <div class="container hero-content">
+                <h1>Responsive CSS Practice</h1>
+
+                <p>
+                    Practise responsive layouts, hover effects, transitions,
+                    transforms and animations in one simple project.
+                </p>
+
+                <a href="#cards" class="button">Start Practising</a>
+            </div>
+        </section>
+
+        <!-- Responsive Cards -->
+        <section class="section" id="cards">
+            <div class="container">
+                <h2 class="section-title">Responsive Cards</h2>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="image-container">
+                            <img
+                                src="https://picsum.photos/500/300?random=1"
+                                alt="Mountain landscape"
+                                class="card-image"
+                            >
+                        </div>
+
+                        <div class="card-content">
+                            <h2>Responsive Design</h2>
+                            <p>
+                                This card uses CSS Grid and changes columns
+                                according to the screen size.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="image-container">
+                            <img
+                                src="https://picsum.photos/500/300?random=2"
+                                alt="Natural landscape"
+                                class="card-image"
+                            >
+                        </div>
+
+                        <div class="card-content">
+                            <h2>Image Zoom</h2>
+                            <p>
+                                Hover over the card to zoom the image using
+                                scale and a smooth transition.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="image-container">
+                            <img
+                                src="https://picsum.photos/500/300?random=3"
+                                alt="City landscape"
+                                class="card-image"
+                            >
+                        </div>
+
+                        <div class="card-content">
+                            <h2>Card Lift</h2>
+                            <p>
+                                The card lifts with translateY and receives
+                                a stronger shadow on hover.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transform Examples -->
+        <section class="section" id="transforms">
+            <div class="container">
+                <h2 class="section-title">CSS 2D Transforms</h2>
+
+                <div class="transform-grid">
+                    <div class="transform-box translate">Translate</div>
+                    <div class="transform-box rotate">Rotate</div>
+                    <div class="transform-box scale">Scale</div>
+                    <div class="transform-box skew">Skew</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Examples -->
+        <section class="section" id="animations">
+            <div class="container">
+                <h2 class="section-title">CSS Animations</h2>
+
+                <div class="animation-container">
+                    <div
+                        class="loader"
+                        role="status"
+                        aria-label="Loading"
+                    ></div>
+
+                    <div class="pulse">Pulse</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flip Card -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">3D Flip Card</h2>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h2>Hover to Flip</h2>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p>
+                                This side uses rotateY(180deg) and
+                                backface-visibility.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CSS Practice Project</p>
+    </footer>
+</body>
+</html>

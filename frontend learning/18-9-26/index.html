@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>All-in-One HTML/CSS Practice</title>
+  
+  <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+
+    <nav class="sticky-demo" aria-label="Page sections">
+        All-in-One Practice Page — scroll down, this bar sticks to the top
+  </nav>
+
+    <section>
+    <h1>Document Structure &amp; Text Elements</h1>
+    
+    <h2>Heading levels</h2>
+    <p>
+      <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> form a hierarchy —
+      h1 is the single main title of the page, h2 are major sections,
+      h3 sub-sections, and so on. Skipping levels (h1 straight to h4)
+      breaks the outline screen readers rely on.
+    </p>
+
+    <h3>Text formatting</h3>
+    <p>
+      This paragraph has <strong>strong (important) text</strong>,
+      <em>emphasized (stressed) text</em>, and a <mark>highlighted phrase</mark>.
+          </p>
+    <p>
+      Line break example: Line one<br>Line two
+          </p>
+    <blockquote>
+      "Quoted text goes in a blockquote, not scare-quotes in a <p>."
+          </blockquote>
+  </section>
+
+    <section>
+    <h2>Links, Images &amp; Multimedia</h2>
+
+    <p>
+      <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">
+        External link to MDN
+      </a>
+          </p>
+
+    <p>
+      <a href="#section-forms">Jump to the Forms section below</a>
+          </p>
+
+    <figure>
+      <img
+        src="https://placehold.co/300x150"
+        alt="Placeholder image, 300 by 150 pixels"
+        width="300"
+        height="150"
+      >
+            <figcaption>Figure: a placeholder image with a caption</figcaption>
+          </figure>
+  </section>
+
+    <section>
+    <h2>Lists &amp; Tables</h2>
+
+    <h3>Unordered list (bullets — order doesn't matter)</h3>
+    <ul>
+      <li>HTML structures content</li>
+      <li>CSS styles it</li>
+      <li>JavaScript makes it interactive</li>
+    </ul>
+
+    <h3>Ordered list (numbered — order matters)</h3>
+    <ol>
+      <li>Write the HTML</li>
+      <li>Style it with CSS</li>
+      <li>Add behavior with JS</li>
+    </ol>
+
+    <h3>Description list (term + definition pairs)</h3>
+    <dl>
+      <dt>SPA</dt>
+      <dd>Single Page Application — JS swaps content without full reloads</dd>
+      <dt>SaaS</dt>
+      <dd>Software as a Service — hosted, subscription-based software</dd>
+    </dl>
+
+    <h3>Table</h3>
+    <table>
+      <caption>Weekly study hours</caption>
+            <thead>
+                <tr>
+          <th scope="col">Day</th>
+                    <th scope="col">Topic</th>
+          <th scope="col">Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mon</td>
+          <td>HTML Forms</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Tue</td>
+          <td>CSS Flexbox</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+                <tr>
+          <td colspan="2">Total</td>
+                    <td>5</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+    <section id="section-forms">
+    <h2>Forms — Text &amp; Advanced Inputs</h2>
+
+    <form action="#" method="post">
+      
+      <fieldset>
+                <legend>Basic text inputs</legend>
+        
+        <label for="fullname">Full name</label>
+        <input type="text" id="fullname" name="fullname" required>
+        
+        <label for="bio">Short bio</label>
+        <textarea id="bio" name="bio" rows="3"></textarea>
+        
+        <label for="pw">Password</label>
+        <input type="password" id="pw" name="pw" minlength="8">
+              </fieldset>
+
+      <fieldset>
+        <legend>Advanced inputs</legend>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1" max="120">
+        
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" name="dob">
+        
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" name="volume" min="0" max="100">
+        
+        <label for="color">Favorite color</label>
+        <input type="color" id="color" name="color">
+        
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+                    <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="js">JavaScript</option>
+        </select>
+
+        <label>
+          <input type="checkbox" name="subscribe" value="yes">
+          Subscribe to updates
+                  </label>
+
+        <label>
+          <input type="radio" name="level" value="beginner" checked>
+          Beginner
+        </label>
+        <label>
+          <input type="radio" name="level" value="advanced">
+          Advanced
+                  </label>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+          </form>
+  </section>
+
+    <section>
+    <h2>Semantic HTML5</h2>
+    <p>
+      These tags describe MEANING, not just appearance — a <code>&lt;div&gt;</code>
+      says nothing about what it contains; these do:
+    </p>
+
+    <article>
+            <h3>Article: What is Semantic HTML?</h3>
+      <p>Semantic tags help browsers, search engines, and screen readers
+        understand page structure, improving both SEO and accessibility.</p>
+
+      <aside>
+                <strong>Side note:</strong> Search engines weight semantic
+        structure when ranking pages.
+      </aside>
+    </article>
+
+    <footer>
+            <small>&copy; 2026 Practice Project — for learning purposes only.</small>
+          </footer>
+  </section>
+
+    <section>
+    <h2>Box Model</h2>
+    <div class="box-demo">
+      This box has padding (space inside the border), a border,
+      and margin (space outside the border) — the four layers of
+      the CSS box model: content → padding → border → margin.
+    </div>
+  </section>
+
+    <section>
+    <h2>Display: inline vs block vs inline-block</h2>
+
+    <p>Inline (sits within text flow):</p>
+    <p class="inline-demo">
+      <span>one</span> <span>two</span> <span>three</span>
+    </p>
+
+    <p>Block (each takes a full new line):</p>
+    <div class="block-demo">
+      <div>Block A</div>
+      <div>Block B</div>
+    </div>
+
+    <p>Inline-block (in-line, but respects width/height):</p>
+    <p class="inline-block-demo">
+      <span>Box 1</span><span>Box 2</span><span>Box 3</span>
+    </p>
+  </section>
+
+    <section>
+    <h2>Positioning</h2>
+    <div class="position-demo">
+      Relatively positioned container
+      <span class="badge">NEW</span>
+          </div>
+  </section>
+
+    <section>
+    <h2>Flexbox (one-dimensional layout)</h2>
+    <div class="flex-demo">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+    </div>
+  </section>
+
+    <section>
+    <h2>Grid (two-dimensional layout)</h2>
+    <div class="grid-demo">
+      <div class="grid-item span-2">Spans 2 columns</div>
+      <div class="grid-item">1 column</div>
+      <div class="grid-item">1 column</div>
+      <div class="grid-item">1 column</div>
+      <div class="grid-item">1 column</div>
+    </div>
+  </section>
+
+    <section class="transform-demo">
+    <h2>Transitions &amp; Transforms</h2>
+    <button>Hover over me</button>
+  </section>
+
+    <section class="animate-demo">
+    <h2>Animations</h2>
+    <div class="pulse-box"></div>
+    <p>This circle pulses continuously using @keyframes — animations
+      can have multiple steps and loop, unlike transitions which
+      only play once between two states.</p>
+  </section>
+
+    <section class="responsive-demo">
+    <h2>Responsive Design</h2>
+    <p>
+      Resize your browser window narrower than 600px — this box
+      turns red/white, and the flexbox section above stacks its
+      items vertically instead of horizontally. That's the
+      <code>@media (max-width: 600px)</code> rule in the CSS kicking in.
+    </p>
+  </section>
+
+</body>
+</html>

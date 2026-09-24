@@ -1,0 +1,389 @@
+<!--<article>
+    <header>
+        <h3>Understanding HTML Page Structure</h3>
+        <p>
+            Published on
+            <time datetime="2026-09-16">September 16, 2026</time>
+        </p>
+    </header>
+
+    <p>
+        A well-structured HTML document organizes content using semantic
+        elements. This makes the webpage easier for users, browsers, search
+        engines, and assistive technologies to understand.
+    </p>
+
+    <figure>
+        <img
+            src="https://placehold.co/600x350"
+            alt="Placeholder showing a semantic HTML page structure"
+            width="600"
+            height="350"
+        >
+        <figcaption>
+            An example illustration of a semantic HTML page structure.
+        </figcaption>
+    </figure>
+
+    <footer>
+        <p>Written by <strong>Hariprasaad</strong></p>
+    </footer>
+</article> 
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Overflow Examples</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 120px;
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid #333333;
+        }
+
+        /* Content can extend outside */
+        .overflow-visible {
+            overflow: visible;
+        }
+
+        /* Extra content is hidden */
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        /* Scrollbars are always displayed */
+        .overflow-scroll {
+            overflow: scroll;
+        }
+
+        /* Scrollbars appear only when required */
+        .overflow-auto {
+            overflow: auto;
+        }
+
+        /* Only horizontal overflow */
+        .overflow-horizontal {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Overflow Examples</h1>
+
+    <div class="box overflow-visible">
+        <h2>Overflow Visible</h2>
+        <p>
+            This content is longer than its container. Because overflow is
+            visible, the extra content extends outside the container.
+            This is the default overflow behavior.
+        </p>
+    </div>
+
+    <div class="box overflow-hidden">
+        <h2>Overflow Hidden</h2>
+        <p>
+            This content is longer than its container. The extra content
+            will be clipped and hidden from the user.
+        </p>
+    </div>
+
+    <div class="box overflow-scroll">
+        <h2>Overflow Scroll</h2>
+        <p>
+            This content is longer than its container. Scrollbars are
+            always displayed, even when they are not required.
+        </p>
+    </div>
+
+    <div class="box overflow-auto">
+        <h2>Overflow Auto</h2>
+        <p>
+            This content is longer than its container. Scrollbars appear
+            automatically only when the content exceeds the available
+            width or height of the container.
+        </p>
+    </div>
+
+    <div class="box overflow-horizontal">
+        This is a very long line of content that creates horizontal overflow and allows horizontal scrolling.
+    </div>
+    <header class="fixed-header">
+    <h1>My Website</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Page Content</h2>
+    <p>Scroll the page to see the fixed header.</p>
+</main>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding-top: 80px;
+        font-family: Arial, sans-serif;
+    }
+
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        width: 100%;
+        height: 80px;
+        padding: 15px 30px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        color: #ffffff;
+        background-color: #1e3a8a;
+    }
+
+    .fixed-header h1 {
+        margin: 0;
+    }
+
+    .fixed-header a {
+        margin-left: 20px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    main {
+        min-height: 1500px;
+        padding: 30px;
+    }
+</style>
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modal and Floating Button</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 1500px;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Floating button */
+
+        .floating-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 100;
+
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+
+            color: #ffffff;
+            background-color: #2563eb;
+            font-size: 28px;
+            cursor: pointer;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .floating-button:hover {
+            transform: scale(1.1);
+            background-color: #1d4ed8;
+        }
+
+        /* Modal background overlay */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Displayed when JavaScript adds the class */
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        /* Modal box */
+
+        .modal {
+            position: relative;
+            width: min(500px, 100%);
+            padding: 30px;
+            border-radius: 12px;
+
+            background-color: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        /* Close button */
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+
+            border: none;
+            color: #4b5563;
+            background: transparent;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .modal-action {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+
+            color: #ffffff;
+            background-color: #2563eb;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Modal and Floating Button</h1>
+
+        <p>
+            Click the floating plus button in the bottom-right corner
+            to open the modal.
+        </p>
+    </main>
+
+    
+
+    <button
+        class="floating-button"
+        id="openModal"
+        type="button"
+        aria-label="Open contact form"
+        aria-controls="contactModal"
+        aria-haspopup="dialog"
+    >
+        +
+    </button>
+
+   
+
+    <div class="modal-overlay" id="contactModal">
+        <section
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+            <button
+                class="close-button"
+                id="closeModal"
+                type="button"
+                aria-label="Close modal"
+            >
+                &times;
+            </button>
+
+            <h2 id="modalTitle">Contact Us</h2>
+
+            <p>
+                This modal appears above the page using fixed positioning
+                and a higher z-index.
+            </p>
+
+            <button class="modal-action" type="button">
+                Send Message
+            </button>
+        </section>
+    </div>
+
+    <script>
+        const openButton = document.getElementById("openModal");
+        const closeButton = document.getElementById("closeModal");
+        const modalOverlay = document.getElementById("contactModal");
+
+        function openModal() {
+            modalOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+            closeButton.focus();
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+            openButton.focus();
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+
+        modalOverlay.addEventListener("click", function (event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (
+                event.key === "Escape" &&
+                modalOverlay.classList.contains("active")
+            ) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html> -->
+

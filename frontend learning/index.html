@@ -1,0 +1,1341 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <p>Select your skills:</p>
+
+    <label>
+        <input type="checkbox" name="skills" value="html">
+        HTML
+    </label>
+
+    <label>
+        <input type="checkbox" name="skills" value="css">
+        CSS
+    </label>
+
+    <label>
+        <input type="checkbox" name="skills" value="javascript">
+        JavaScript
+    </label>
+    </form>
+    <form>
+        
+    <p>Select your experience level:</p>
+
+    <label>
+        <input type="radio" name="experience" value="beginner">
+        Beginner
+    </label>
+
+    <label>
+        <input type="radio" name="experience" value="intermediate">
+        Intermediate
+    </label>
+
+    <label>
+        <input type="radio" name="experience" value="advanced">
+        Advanced
+    </label>
+
+</form><br>
+<form>
+    <label for="course">Select a course:</label>
+
+    <select id="course" name="course" required>
+        <option value="">Choose a course</option>
+        <option value="python">Python</option>
+        <option value="mern">MERN Stack</option>
+        <option value="django">Django</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form><br>
+<form>
+    <label for="date">Select date:</label>
+    <input type="date" id="date" name="date">
+
+    <br><br>
+
+    <label for="time">Select time:</label>
+    <input type="time" id="time" name="time">
+
+    <br><br>
+
+    <label for="appointment">Select date and time:</label>
+    <input
+        type="datetime-local"
+        id="appointment"
+        name="appointment"
+    >
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+<br>
+<form>
+    <label for="volume">Volume:</label>
+    <input
+        type="range"
+        id="volume"
+        name="volume"
+        min="0"
+        max="100"
+        value="50"
+    >
+
+    <br><br>
+
+    <label for="color">Choose a color:</label>
+    <input
+        type="color"
+        id="color"
+        name="color"
+        value="#0066ff"
+    >
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form><br>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="document">Upload a document:</label>
+
+    <input
+        type="file"
+        id="document"
+        name="document"
+        accept=".pdf,.doc,.docx"
+        required
+    >
+
+    <button type="submit">Upload</button>
+</form>
+<select name="course">
+    <optgroup label="Frontend">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+    </optgroup>
+
+    <optgroup label="Backend">
+        <option value="python">Python</option>
+        <option value="django">Django</option>
+    </optgroup>
+</select>
+<br>
+<input type="hidden" name="user_id" value="123">
+
+<br>
+
+<fieldset>
+    <legend>Select Workshops</legend>
+
+    <label>
+        <input
+            type="checkbox"
+            name="workshops"
+            value="web-development"
+        >
+        Web Development
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="workshops"
+            value="python-programming"
+        >
+        Python Programming
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="workshops"
+            value="ui-ux-design"
+        >
+        UI/UX Design
+    </label>
+</fieldset><br><br>
+
+<label for="profile-photo">Upload Profile Photo:</label>
+<input
+    type="file"
+    id="profile-photo"
+    name="profile_photo"
+    accept="image/*"
+    required
+>
+
+<br><br>
+
+<label for="company-name">Company Name:</label>
+<input
+    type="text"
+    id="company-name"
+    name="company_name"
+    list="company-list"
+    placeholder="Select or enter a company"
+>
+
+<datalist id="company-list">
+    <option value="Google">
+    <option value="Microsoft">
+    <option value="Amazon">
+    <option value="TCS">
+    <option value="Infosys">
+</datalist> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Webpage</title>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+   
+        <main>
+    
+    <section>
+        <h2>Latest News</h2>
+
+        
+        <article>
+            <h3>Web Development Workshop</h3>
+            <p>Learn HTML, CSS, and JavaScript in our upcoming workshop.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h2>Related Links</h2>
+        <ul>
+            <li><a href="#">HTML Tutorial</a></li>
+            <li><a href="#">CSS Tutorial</a></li>
+        </ul>
+    </aside>
+</main>
+    
+
+    <footer>
+        <p>&copy; 2026 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html> -->
+<!-- <header>
+    <h1>My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    Main content goes here
+</main>
+
+<footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer> -->
+
+
+<!-- <form action="/submit" method="post">
+    <label for="name">Full Name:</label>
+
+    <input
+        type="text"
+        id="name"
+        name="full_name"
+        required
+    >
+
+    <button type="submit">Submit</button>
+</form>
+
+<form action="/submit" method="post" enctype="multipart/form-data">
+    
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="full_name" required>
+
+    <br><br>
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <br><br>
+
+  
+    <label for="password">Password:</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="8"
+        required
+    >
+
+    <br><br>
+
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="18" max="100">
+
+    <br><br>
+
+  
+    <label for="birth-date">Date of Birth:</label>
+    <input type="date" id="birth-date" name="birth_date">
+
+    <br><br>
+
+    <label for="contact-time">Preferred Contact Time:</label>
+    <input type="time" id="contact-time" name="contact_time">
+
+    <br><br>
+
+    
+    <fieldset>
+        <legend>Experience Level</legend>
+
+        <label>
+            <input
+                type="radio"
+                name="experience"
+                value="beginner"
+                required
+            >
+            Beginner
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="experience"
+                value="intermediate"
+            >
+            Intermediate
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="experience"
+                value="advanced"
+            >
+            Advanced
+        </label>
+    </fieldset>
+
+    <br>
+    <fieldset>
+        <legend>Select Your Skills</legend>
+
+        <label>
+            <input type="checkbox" name="skills" value="html">
+            HTML
+        </label>
+
+        <label>
+            <input type="checkbox" name="skills" value="css">
+            CSS
+        </label>
+
+        <label>
+            <input type="checkbox" name="skills" value="javascript">
+            JavaScript
+        </label>
+    </fieldset>
+
+    <br>
+    <label for="confidence">Confidence Level:</label>
+    <input
+        type="range"
+        id="confidence"
+        name="confidence"
+        min="0"
+        max="10"
+        value="5"
+    >
+
+    <br><br>
+
+    <label for="color">Favourite Color:</label>
+    <input type="color" id="color" name="favourite_color">
+
+    <br><br>
+
+    <label for="photo">Profile Photo:</label>
+    <input
+        type="file"
+        id="photo"
+        name="profile_photo"
+        accept="image/*"
+    >
+
+    <br><br>
+
+    <input type="hidden" name="form_id" value="registration-101">
+
+    <input type="submit" value="Submit Form">
+    <input type="reset" value="Reset Form">
+</form>
+</body>
+</html> -->
+<!-- <form action="/register" method="post">
+    <h1>Registration Form</h1>
+
+    <p>
+        Fields marked with <span aria-hidden="true">*</span> are required.
+    </p>
+
+    <div>
+        <label for="full-name">
+            Full Name <span aria-hidden="true">*</span>
+        </label>
+
+        <input
+            type="text"
+            id="full-name"
+            name="full_name"
+            autocomplete="name"
+            required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="email">
+            Email Address <span aria-hidden="true">*</span>
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            aria-describedby="email-help"
+            required
+        >
+
+        <small id="email-help">
+            Enter an address such as name@example.com.
+        </small>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="phone">Phone Number:</label>
+
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+        >
+    </div>
+
+    <br>
+
+    <fieldset>
+        <legend>
+            Preferred Contact Method
+            <span aria-hidden="true">*</span>
+        </legend>
+
+        <label>
+            <input
+                type="radio"
+                name="contact_method"
+                value="email"
+                required
+            >
+            Email
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="contact_method"
+                value="phone"
+            >
+            Phone
+        </label>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Select Your Skills</legend>
+
+        <label>
+            <input type="checkbox" name="skills" value="html">
+            HTML
+        </label>
+
+        <label>
+            <input type="checkbox" name="skills" value="css">
+            CSS
+        </label>
+
+        <label>
+            <input type="checkbox" name="skills" value="javascript">
+            JavaScript
+        </label>
+    </fieldset>
+
+    <br>
+
+    <div>
+        <label for="message">Message:</label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            aria-describedby="message-help"
+        ></textarea>
+
+        <small id="message-help">
+            Enter up to 500 characters.
+        </small>
+    </div>
+
+    <br>
+
+    <button type="submit">Submit Registration</button>
+    <button type="reset">Reset Form</button>
+</form> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A complete HTML practice page covering semantic elements and forms."
+    >
+
+    <title>HTML Practice Project</title>
+</head>
+
+<body>
+
+    <!-- =========================
+         WEBSITE HEADER
+    ========================== -->
+    <header>
+        <a href="#home" aria-label="HTML Learning Hub home">
+            <img
+                src="images/logo.png"
+                alt="HTML Learning Hub logo"
+                width="60"
+                height="60"
+            >
+        </a>
+
+        <h1>HTML Learning Hub</h1>
+
+        <!-- Primary navigation -->
+        <nav aria-label="Primary navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main id="home">
+
+        <!-- Introduction section -->
+        <section aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading">Welcome</h2>
+
+            <p>
+                This page demonstrates
+                <mark>semantic HTML elements</mark>
+                and accessible form controls.
+            </p>
+
+            <p>
+                The workshop will begin on
+                <time datetime="2026-09-25T10:00">
+                    September 25, 2026, at 10:00 AM
+                </time>.
+            </p>
+
+            <figure>
+                <img
+                    src="images/html-workshop.jpg"
+                    alt="Students attending an HTML workshop"
+                    width="600"
+                    height="350"
+                >
+
+                <figcaption>
+                    Students learning HTML in a practical workshop
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- =========================
+             ARTICLES
+        ========================== -->
+        <section id="articles" aria-labelledby="articles-heading">
+            <h2 id="articles-heading">Latest Articles</h2>
+
+            <article>
+                <header>
+                    <h3>Introduction to Semantic HTML</h3>
+
+                    <p>
+                        Published by Hariprasaad on
+                        <time datetime="2026-09-16">
+                            September 16, 2026
+                        </time>
+                    </p>
+                </header>
+
+                <section aria-labelledby="semantic-heading">
+                    <h4 id="semantic-heading">
+                        What Is Semantic HTML?
+                    </h4>
+
+                    <p>
+                        Semantic HTML uses meaningful elements to describe
+                        the purpose and structure of webpage content.
+                    </p>
+
+                    <p>
+                        Examples include
+                        <code>&lt;header&gt;</code>,
+                        <code>&lt;nav&gt;</code>,
+                        <code>&lt;main&gt;</code>,
+                        <code>&lt;article&gt;</code>,
+                        <code>&lt;aside&gt;</code> and
+                        <code>&lt;footer&gt;</code>.
+                    </p>
+                </section>
+
+                <footer>
+                    <p>Category: HTML</p>
+                    <a href="#">Read the full article</a>
+                </footer>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Creating Accessible Forms</h3>
+
+                    <p>
+                        Published by Hariprasaad on
+                        <time datetime="2026-09-15">
+                            September 15, 2026
+                        </time>
+                    </p>
+                </header>
+
+                <section aria-labelledby="forms-heading">
+                    <h4 id="forms-heading">
+                        Why Are Labels Important?
+                    </h4>
+
+                    <p>
+                        Labels describe form controls and help screen-reader
+                        users understand the information they need to enter.
+                    </p>
+                </section>
+
+                <footer>
+                    <p>Category: HTML Forms</p>
+                    <a href="#">Read the full article</a>
+                </footer>
+            </article>
+        </section>
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+        <aside aria-labelledby="sidebar-heading">
+            <h2 id="sidebar-heading">Related Information</h2>
+
+            <section aria-labelledby="author-heading">
+                <h3 id="author-heading">About the Author</h3>
+
+                <figure>
+                    <img
+                        src="images/author.jpg"
+                        alt="Hariprasaad, web developer and author"
+                        width="150"
+                        height="150"
+                    >
+
+                    <figcaption>
+                        Hariprasaad — Web Developer
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Hariprasaad writes about HTML, CSS, JavaScript and
+                    full-stack development.
+                </p>
+            </section>
+
+            <nav aria-labelledby="categories-heading">
+                <h3 id="categories-heading">Categories</h3>
+
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Python</a></li>
+                </ul>
+            </nav>
+
+            <section aria-labelledby="recent-heading">
+                <h3 id="recent-heading">Recent Posts</h3>
+
+                <ul>
+                    <li>
+                        <a href="#">Introduction to Semantic HTML</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Creating Accessible Forms</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Getting Started with CSS</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- =========================
+             REGISTRATION FORM
+        ========================== -->
+        <section
+            id="registration"
+            aria-labelledby="registration-heading"
+        >
+            <h2 id="registration-heading">
+                Workshop Registration Form
+            </h2>
+
+            <p>
+                Fields marked with
+                <span aria-hidden="true">*</span>
+                are required.
+            </p>
+
+            <form
+                action="/submit"
+                method="post"
+                enctype="multipart/form-data"
+            >
+                <!-- Hidden input -->
+                <input
+                    type="hidden"
+                    name="form_id"
+                    value="workshop-registration-101"
+                >
+
+                <!-- Personal details -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <p>
+                        <label for="full-name">
+                            Full Name
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="full_name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="email">
+                            Email Address
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            aria-describedby="email-help"
+                            required
+                        >
+
+                        <small id="email-help">
+                            Enter a valid email address.
+                        </small>
+                    </p>
+
+                    <p>
+                        <label for="password">
+                            Password
+                            <span aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            minlength="8"
+                            aria-describedby="password-help"
+                            required
+                        >
+
+                        <small id="password-help">
+                            Password must contain at least eight characters.
+                        </small>
+                    </p>
+
+                    <p>
+                        <label for="phone">Phone Number:</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+91 98765 43210"
+                            autocomplete="tel"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="date-of-birth">
+                            Date of Birth:
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date-of-birth"
+                            name="date_of_birth"
+                            min="1940-01-01"
+                            max="2008-12-31"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="company-name">Company Name:</label>
+
+                        <input
+                            type="text"
+                            id="company-name"
+                            name="company_name"
+                            list="company-list"
+                            placeholder="Select or enter a company"
+                            autocomplete="organization"
+                        >
+
+                        <datalist id="company-list">
+                            <option value="Google"></option>
+                            <option value="Microsoft"></option>
+                            <option value="Amazon"></option>
+                            <option value="TCS"></option>
+                            <option value="Infosys"></option>
+                        </datalist>
+                    </p>
+                </fieldset>
+
+                <!-- Ticket selection -->
+                <fieldset>
+                    <legend>
+                        Select Your Ticket Type
+                        <span aria-hidden="true">*</span>
+                    </legend>
+
+                    <p>
+                        <label>
+                            <input
+                                type="radio"
+                                name="ticket_type"
+                                value="standard"
+                                required
+                            >
+                            Standard — ₹500
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="radio"
+                                name="ticket_type"
+                                value="premium"
+                            >
+                            Premium — ₹1,000
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="radio"
+                                name="ticket_type"
+                                value="vip"
+                            >
+                            VIP — ₹2,000
+                        </label>
+                    </p>
+                </fieldset>
+
+                <!-- Workshop selection -->
+                <fieldset>
+                    <legend>Select Workshops</legend>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="workshops"
+                                value="web-development"
+                                checked
+                            >
+                            Web Development
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="workshops"
+                                value="python-programming"
+                            >
+                            Python Programming
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="workshops"
+                                value="ui-ux-design"
+                            >
+                            UI/UX Design
+                        </label>
+                    </p>
+                </fieldset>
+
+                <!-- Country selection -->
+                <p>
+                    <label for="country">
+                        Select Your Country:
+                    </label>
+
+                    <select id="country" name="country" required>
+                        <option value="">
+                            Choose a country
+                        </option>
+
+                        <optgroup label="Asia">
+                            <option value="india" selected>
+                                India
+                            </option>
+                            <option value="japan">Japan</option>
+                            <option value="singapore">
+                                Singapore
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="Europe">
+                            <option value="france">France</option>
+                            <option value="germany">Germany</option>
+                            <option value="united-kingdom">
+                                United Kingdom
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="North America">
+                            <option value="canada">Canada</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="united-states">
+                                United States
+                            </option>
+                        </optgroup>
+
+                        <optgroup label="Africa">
+                            <option value="egypt">Egypt</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="south-africa">
+                                South Africa
+                            </option>
+                        </optgroup>
+                    </select>
+                </p>
+
+                <!-- Date, time and number -->
+                <fieldset>
+                    <legend>Event Preferences</legend>
+
+                    <p>
+                        <label for="event-date">
+                            Preferred Event Date:
+                        </label>
+
+                        <input
+                            type="date"
+                            id="event-date"
+                            name="event_date"
+                            min="2026-09-20"
+                            max="2026-12-31"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="contact-time">
+                            Preferred Contact Time:
+                        </label>
+
+                        <input
+                            type="time"
+                            id="contact-time"
+                            name="contact_time"
+                            min="09:00"
+                            max="18:00"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="appointment">
+                            Appointment Date and Time:
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="appointment"
+                            name="appointment"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="additional-guests">
+                            Number of Additional Guests:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="additional-guests"
+                            name="additional_guests"
+                            min="0"
+                            max="5"
+                            value="0"
+                        >
+                    </p>
+                </fieldset>
+
+                <!-- Range and color -->
+                <fieldset>
+                    <legend>Personal Preferences</legend>
+
+                    <p>
+                        <label for="experience">
+                            Experience Level (0–10):
+                        </label>
+
+                        <input
+                            type="range"
+                            id="experience"
+                            name="experience_level"
+                            min="0"
+                            max="10"
+                            value="5"
+                            step="1"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="badge-color">
+                            Preferred Badge Color:
+                        </label>
+
+                        <input
+                            type="color"
+                            id="badge-color"
+                            name="badge_color"
+                            value="#0066ff"
+                        >
+                    </p>
+                </fieldset>
+
+                <!-- File upload -->
+                <fieldset>
+                    <legend>Profile Photo</legend>
+
+                    <p>
+                        <label for="profile-photo">
+                            Upload Profile Photos:
+                        </label>
+
+                        <input
+                            type="file"
+                            id="profile-photo"
+                            name="profile_photos"
+                            accept="image/*"
+                            multiple
+                        >
+                    </p>
+
+                    <p>
+                        You can select multiple image files.
+                    </p>
+                </fieldset>
+
+                <!-- Dietary requirements -->
+                <fieldset>
+                    <legend>Dietary Requirements</legend>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="dietary_requirements"
+                                value="vegetarian"
+                            >
+                            Vegetarian
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="dietary_requirements"
+                                value="vegan"
+                            >
+                            Vegan
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="dietary_requirements"
+                                value="gluten-free"
+                            >
+                            Gluten-Free
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="dietary_requirements"
+                                value="none"
+                            >
+                            No Special Requirements
+                        </label>
+                    </p>
+                </fieldset>
+
+                <!-- Multiline text -->
+                <p>
+                    <label for="message">
+                        Additional Message:
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="40"
+                        maxlength="500"
+                        placeholder="Enter additional information"
+                        aria-describedby="message-help"
+                    ></textarea>
+
+                    <small id="message-help">
+                        Maximum 500 characters.
+                    </small>
+                </p>
+
+                <!-- Terms acceptance -->
+                <p>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="terms"
+                            value="accepted"
+                            required
+                        >
+
+                        I accept the terms and conditions.
+                        <span aria-hidden="true">*</span>
+                    </label>
+                </p>
+
+                <!-- Form buttons -->
+                <p>
+                    <button type="submit">
+                        Submit Registration
+                    </button>
+
+                    <button type="reset">
+                        Reset Form
+                    </button>
+                </p>
+            </form>
+        </section>
+
+        <!-- =========================
+             FAQ
+        ========================== -->
+        <section id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is semantic HTML?</summary>
+
+                <p>
+                    Semantic HTML uses meaningful elements to describe the
+                    purpose and structure of content.
+                </p>
+            </details>
+
+            <details>
+                <summary>Why are form labels important?</summary>
+
+                <p>
+                    Labels help users understand form fields and allow
+                    screen readers to announce them correctly.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    What is the difference between radio buttons and
+                    checkboxes?
+                </summary>
+
+                <p>
+                    Radio buttons allow one selection from a group.
+                    Checkboxes allow multiple selections.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    Why is multipart/form-data required?
+                </summary>
+
+                <p>
+                    It allows the form to send uploaded files correctly
+                    to the server.
+                </p>
+            </details>
+
+            <details>
+                <summary>Does the FAQ require JavaScript?</summary>
+
+                <p>
+                    No. The details and summary elements create expandable
+                    content natively.
+                </p>
+            </details>
+        </section>
+    </main>
+
+    <!-- =========================
+         WEBSITE FOOTER
+    ========================== -->
+    <footer id="contact">
+        <p>
+            &copy; 2026 HTML Learning Hub. All rights reserved.
+        </p>
+
+        <!-- Secondary navigation -->
+        <nav aria-label="Footer navigation">
+            <h2>Quick Links</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact information -->
+        <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Information</h2>
+
+            <address>
+                <p>
+                    Email:
+                    <a href="mailto:hello@example.com">
+                        hello@example.com
+                    </a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+                </p>
+
+                <p>Erode, Tamil Nadu, India</p>
+            </address>
+        </section>
+    </footer>
+
+</body>
+</html>
