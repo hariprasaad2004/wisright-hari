@@ -45,10 +45,51 @@
 // name();
 
 
-const factorial = function fact(n) {
-  if (n <= 1) return 1;
-  return n * fact(n - 1);   // calls itself using "fact"
-};
+// const factorial = function fact(n) {
+//   if (n <= 1) return 1;
+//   return n * fact(n - 1);   // calls itself using "fact"
+// };
 
-console.log(factorial(5));  // 120
-console.log(typeof fact);   // "undefined" (not visible outside)
+// console.log(factorial(5));  // 120
+// console.log(typeof fact);   // "undefined" (not visible outside)
+
+
+// let ans = (a,b) => a + b
+// console.log(ans(1,2))
+
+// let random = () => Math.random
+// console.log(random)
+
+// function greet(name, callback) {
+//   console.log("Hello, " + name);
+//   callback();
+// }
+
+// greet("Asha", () => console.log("Done!"));
+// // const double = multiplier(2); double(5) 
+
+// function test() { return; }
+// console.log(test)
+
+
+// for (var i = 0; i < 3; i++) {}
+// console.log(i);   // 3  (leaked)
+
+// for (let j = 0; j < 3; j++) {}
+// console.log(j);   // ReferenceError
+
+
+
+
+// var x;   
+// x = 5;         // hoisted, set to undefined
+// console.log(x);
+
+// let v = "outer";
+// {
+//   console.log(v); // ReferenceError, NOT "outer"
+//   // let v = "inner";
+
+ var x = 1; function test() { console.log(x); var x = 2; } test();
+
+ sayHi(); var sayHi = function() { console.log('Hi'); };
