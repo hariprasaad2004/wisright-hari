@@ -84,5 +84,3 @@ console.log(photo.hasAttribute("alt"))
 // const img =  document.getElementById("img")
 
 // img.src ="img.jpg"
-
-
