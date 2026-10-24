@@ -115,13 +115,74 @@
 // console.log("End");
 
 
-function greet(call) {
-    console.log("Hello!");
-    call();
+// function greet(call) {
+//     console.log("Hello!");
+//     call();
+// }
+
+// function finished() {
+//     console.log("Task completed");
+// }
+
+// greet(finished);
+
+
+// const mycallback =()=> {
+//     console.log('this is call back')
+// }
+
+// setTimeout(mycallback,5000);
+
+// function hello(){
+//     console.log("hey hello")
+// }
+// function hii(){
+//     console.log("hey hii")
+// }
+//  function call (calling){
+//     calling();
+//  }
+
+// call(hello);
+
+////////////////////////////////
+// function orderFood() {
+//     console.log("Food ordered");
+// }
+
+// function eatFood() {
+//     console.log("Eating food");
+// }
+
+// function restaurant(callback) {
+//     orderFood();
+    
+//     setTimeout(()=>callback(),2000);
+    
+// }
+
+// restaurant(eatFood);
+
+
+
+
+
+
+function hello(){
+    console.log("hello")
+}
+function hi(){
+    console.log("hi")
 }
 
-function finished() {
-    console.log("Task completed");
+function wel(){
+    console.log("welcome")
 }
 
-greet(finished);
+function call(calling){
+    calling();
+}
+
+call(hi);
+hello();
+wel();
