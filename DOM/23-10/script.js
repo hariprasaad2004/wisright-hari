@@ -1,8 +1,8 @@
 const header = document.getElementById("header")
 header.innerHTML = "<h1> hari food shop </h1>"
 
-const btn = document.querySelectorAll(".btn")
-for(let b of btn){
+const btnn = document.querySelectorAll(".btn")
+for(let b of btnn){
      b.style.backgroundColor = "black"
 }
 
@@ -84,3 +84,26 @@ console.log(photo.hasAttribute("alt"))
 // const img =  document.getElementById("img")
 
 // img.src ="img.jpg"
+
+//   const btn = document.getElementById("btn");
+//   const firstmessage = document.getElementById("message");
+
+//   function firstMessage() {
+//   console.log("First handler");
+
+// }
+
+// function secondMessage() {
+//   console.log("Second handler");
+// }
+
+ const btn = document.getElementById("btn");
+
+function hover(btn) {
+ 
+  btn.addEventListener("mouseover", function() {
+    btn.style.backgroundColor = "red";
+  });
+}
+
+// btn.addEventListener("click", secondMessage);

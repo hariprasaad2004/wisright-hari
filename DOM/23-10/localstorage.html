@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Javascript</title>
+
+  <!-- TailwindCSS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @import 'tailwindcss';
+    @custom-variant dark (&:where(.dark, .dark *));
+  </style>
+</head>
+<body class="p-10 bg-blue-50 dark:bg-blue-950">
+  <button onclick="toggleTheme()" class="px-3 py-2 rounded bg-yellow-500 text-black float-right text-sm font-semibold">
+    Toggle Theme
+  </button>
+
+  <div class="bg-blue-100 dark:bg-blue-800 p-10 rounded">
+    <h1 class="font-semibold text-xl mb-3 dark:text-white">Browser Storage API</h1>
+    <p class="dark:text-white">We are learning Storage in Javascript!</p>
+  </div>
+
+  <script>
+    const html = document.documentElement
+
+    // Load theme from localStorage on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
+
+    // Toggle theme and save preference
+    function toggleTheme() {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+      } else {
+        html.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+      }
+    }
+
+    sessionStorage.setItem("name", "Hari Prasaad");
+    console.log(sessionStorage.getItem("name"));
+
+  </script>
+</body>
+</html>

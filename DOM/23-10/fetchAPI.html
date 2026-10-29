@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTTP Methods Demo</title>
+</head>
+
+<body>
+
+  <h1>HTTP Methods Demo</h1>
+
+  <button onclick="getPost()">GET</button>
+  <button onclick="createPost()">POST</button>
+  <button onclick="updatePost()">PUT</button>
+  <button onclick="patchPost()">PATCH</button>
+  <button onclick="deletePost()">DELETE</button>
+
+  <div id="output"></div>
+
+  <script>
+    const API_URL = "https://jsonplaceholder.typicode.com/posts";
+    const output = document.getElementById("output");
+
+    // Display response on the webpage
+    function displayData(method, data) {
+      const card = document.createElement("div");
+      card.className = "result";
+
+      const heading = document.createElement("h2");
+      heading.textContent = method;
+
+      const pre = document.createElement("pre");
+      pre.textContent = JSON.stringify(data, null, 2);
+
+      card.append(heading, pre);
+      output.prepend(card);
+    }
+
+    // GET - Fetch existing post
+    async function getPost() {
+      try {
+        const response = await fetch(`${API_URL}/1`);
+
+        if (!response.ok) throw new Error("GET request failed");
+
+        const data = await response.json();
+        displayData("GET - Post Details", data);
+      } catch (error) {
+        displayData("GET - Error", { message: error.message });
+      }
+    }
+
+    // POST - Create new post
+    async function createPost() {
+      try {
+        const post = {
+          title: "JavaScript Basics",
+          body: "Learning Fetch API",
+          userId: 1
+        };
+
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(post)
+        });
+
+        if (!response.ok) throw new Error("POST request failed");
+
+        const data = await response.json();
+        displayData("POST - Created Post", data);
+      } catch (error) {
+        displayData("POST - Error", { message: error.message });
+      }
+    }
+
+    // PUT - Replace entire post
+    async function updatePost() {
+      try {
+        const post = {
+          title: "Updated JavaScript",
+          body: "Learning PUT request",
+          userId: 1
+        };
+
+        const response = await fetch(`${API_URL}/1`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(post)
+        });
+
+        if (!response.ok) throw new Error("PUT request failed");
+
+        const data = await response.json();
+        displayData("PUT - Updated Post", data);
+      } catch (error) {
+        displayData("PUT - Error", { message: error.message });
+      }
+    }
+
+    // PATCH - Update only title
+    async function patchPost() {
+      try {
+        const response = await fetch(`${API_URL}/1`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            title: "New Title"
+          })
+        });
+
+        if (!response.ok) throw new Error("PATCH request failed");
+
+        const data = await response.json();
+        displayData("PATCH - Partially Updated Post", data);
+      } catch (error) {
+        displayData("PATCH - Error", { message: error.message });
+      }
+    }
+
+    // DELETE - Delete a post
+    async function deletePost() {
+      try {
+        const response = await fetch(`${API_URL}/1`, {
+          method: "DELETE"
+        });
+
+        if (!response.ok) throw new Error("DELETE request failed");
+
+        displayData("DELETE - Result", {
+          message: "Post deleted successfully",
+          status: response.status
+        });
+      } catch (error) {
+        displayData("DELETE - Error", { message: error.message });
+      }
+    }
+  </script>
+
+</body>
+</html>

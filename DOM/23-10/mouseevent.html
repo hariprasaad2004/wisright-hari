@@ -1,0 +1,87 @@
+<div id="box" style="padding: 40px; background-color: lightblue;">
+  Mouse inga kondu vaa!
+</div>
+
+<form id="myForm">
+    <input type="text" id="name" placeholder="Enter name">
+    <button type="submit">Submit</button>
+</form>
+
+<div id="parent">
+    <button id="child">Click Me</button>
+</div>
+
+<script>
+  const box = document.getElementById("box");
+
+  box.addEventListener("click", () => {
+    console.log("Single click!");
+  });
+
+  box.addEventListener("dblclick", () => {
+    console.log("Double click!");
+  });
+
+  box.addEventListener("mousedown", () => {
+    console.log("Mouse button pressed");
+  });
+
+  box.addEventListener("mouseup", () => {
+    console.log("Mouse button released");
+  });
+
+  box.addEventListener("mousemove", () => {
+    console.log("Mouse moving");
+  });
+
+  box.addEventListener("mouseenter", () => {
+    box.style.backgroundColor = "orange";
+  });
+
+  box.addEventListener("mouseleave", () => {
+    box.style.backgroundColor = "lightblue";
+  });
+
+
+  document.addEventListener("keydown", (event) => {
+    console.log(event.key);
+
+    if (event.ctrlKey && event.key === "s") {
+        console.log("Ctrl + S pressed");
+    }
+});
+
+
+document.getElementById("myForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Form submitted!");
+});
+
+document.getElementById("name").addEventListener("input", (e) => {
+    console.log(e.target.value);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM is ready");
+});
+
+window.addEventListener("resize", () => {
+    console.log("Window resized");
+});
+
+window.addEventListener("scroll", () => {
+    console.log("Page scrolled");
+}); 
+
+
+document.getElementById("parent").addEventListener("click", (event) => {
+    console.log(event.type);
+    console.log(event.target);
+    console.log(event.currentTarget);
+});
+
+document.getElementById("child").addEventListener("click", (event) => {
+    event.stopPropagation();
+});
+</script>

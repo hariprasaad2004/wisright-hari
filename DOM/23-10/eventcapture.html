@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Practice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        button, input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Events Practice</h1>
+
+    <!-- 1. Mouse Events -->
+    <section>
+        <h2>Mouse Events</h2>
+        <button id="mouseBtn">Click Me</button>
+        <p id="mouseOutput">Mouse output</p>
+    </section>
+
+    <!-- 2. Keyboard Events -->
+    <section>
+        <h2>Keyboard Events</h2>
+        <input id="keyInput" placeholder="Press any key">
+        <p id="keyOutput">Keyboard output</p>
+    </section>
+
+    <!-- 3. Form Events -->
+    <section>
+        <h2>Form Events</h2>
+        <form id="myForm">
+            <input id="username" placeholder="Enter username" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="formOutput"></p>
+    </section>
+
+    <!-- 4. Event Object -->
+    <section>
+        <h2>Event Object</h2>
+        <button id="eventBtn">Check Event</button>
+        <p id="eventOutput"></p>
+    </section>
+
+    <!-- 5. Bubbling and Capturing -->
+    <section id="parent">
+        <h2>Event Propagation</h2>
+        <button id="child">Click Child</button>
+    </section>
+
+    <!-- 6. Event Delegation -->
+    <section>
+        <h2>Event Delegation</h2>
+        <input id="itemInput" placeholder="Enter an item">
+        <button id="addBtn">Add Item</button>
+        <ul id="itemList">
+            <li>Item 1 <button class="delete-btn">Delete</button></li>
+            <li>Item 2 <button class="delete-btn">Delete</button></li>
+        </ul>
+    </section>
+
+    <input id = "input"/><button id = "butt">Click Me</button>
+    <div id="output"></div>
+<!-- <img src="invalid" onerror="alert('XSS')"> -->
+    <script>
+        // 1. Mouse Events
+        const mouseBtn = document.getElementById("mouseBtn");
+
+        mouseBtn.addEventListener("click", (event) => {
+            document.getElementById("mouseOutput").textContent =
+                `Type: ${event.type}, X: ${event.clientX}, Y: ${event.clientY}`;
+        });
+
+        // 2. Keyboard Events
+        const keyInput = document.getElementById("keyInput");
+
+        keyInput.addEventListener("keydown", (event) => {
+            document.getElementById("keyOutput").textContent =
+                `Key: ${event.key}, Code: ${event.code}, Ctrl: ${event.ctrlKey}`;
+        });
+
+        // 3. Form Events
+        const username = document.getElementById("username");
+
+        username.addEventListener("focus", () => {
+            username.style.backgroundColor = "lightyellow";
+        });
+
+        username.addEventListener("blur", () => {
+            username.style.backgroundColor = "";
+        });
+
+        username.addEventListener("input", () => {
+            console.log("Typing:", username.value);
+        });
+
+        document.getElementById("myForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            document.getElementById("formOutput").textContent =
+                `Welcome, ${username.value}!`;
+        });
+
+        // 4. Event Object
+        document.getElementById("eventBtn").addEventListener("click", (event) => {
+            document.getElementById("eventOutput").textContent =
+                `Type: ${event.type}, Target: ${event.target.id}, Current: ${event.currentTarget.id}`;
+        });
+
+        // 5. Bubbling
+        document.getElementById("parent").addEventListener("click", () => {
+            console.log("Parent clicked");
+        });
+
+        document.getElementById("child").addEventListener("click", (event) => {
+            console.log("Child clicked");
+            // Uncomment to stop bubbling:
+            // event.stopPropagation();
+        });
+
+        // Capturing example:
+        document.getElementById("parent").addEventListener("click", () => {
+            console.log("Parent capturing");
+        }, true);
+
+        // 6. Event Delegation
+        const itemList = document.getElementById("itemList");
+
+        document.getElementById("addBtn").addEventListener("click", () => {
+            const value = document.getElementById("itemInput").value.trim();
+
+            if (!value) return;
+
+            const li = document.createElement("li");
+            li.append(document.createTextNode(value + " "));
+
+            const button = document.createElement("button");
+            button.textContent = "Delete";
+            button.className = "delete-btn";
+
+            li.append(button);
+            itemList.append(li);
+
+            document.getElementById("itemInput").value = "";
+        });
+
+        itemList.addEventListener("click", (event) => {
+            if (event.target.matches(".delete-btn")) {
+                event.target.closest("li").remove();
+            }
+        });
+
+        // 7. Document and Window Events
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM is ready");
+        });
+
+        window.addEventListener("load", () => {
+            console.log("Page fully loaded");
+        });
+
+        window.addEventListener("resize", () => {
+            console.log("Window resized");
+        });
+
+        window.addEventListener("scroll", () => {
+            console.log("Page scrolled");
+        });
+
+        const input = document.getElementById("input");
+        const output = document.getElementById("output");
+
+        const clime = document.getElementById("butt");
+        clime.addEventListener("click", () => {
+            console.log(input.value);
+            output.innerHTML = input.value;
+        }); 
+
+
+        // localStorage.setItem("name", "John Doe");
+        // localStorage.setItem("age", "30");
+        // localStorage.setItem("city", "New York");
+        // localStorage.setI     localStorage.setItem("occupation", "Developer");tem("country", "USA");
+        // localStorage.setItem("language", "English");
+        
+
+        const localstorage = {
+            name: localStorage.getItem("name"),
+            age: localStorage.getItem("age"),
+            city: localStorage.getItem("city"),
+            occupation: localStorage.getItem("occupation"),
+            country: localStorage.getItem("country"),
+}
+
+        console.log(localstorage);
+    
+    </script>
+
+</body>
+</html>
