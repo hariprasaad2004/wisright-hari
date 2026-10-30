@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Local Storage</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="myForm">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Saved Data</h3>
+    <p id="output"></p>
+
+    <script>
+        const form = document.getElementById("myForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const output = document.getElementById("output");
+
+        // Local Storage-la save panna function
+        function saveData() {
+            const formData = {
+                name: nameInput.value,
+                email: emailInput.value
+            };
+
+            // Object-a JSON string-ah convert panni save pannrom
+            localStorage.setItem("userData", JSON.stringify(formData));
+
+            console.log("STATUS 1: Data saved to Local Storage");
+
+            // Save panna data-va display pannrom
+            displayData();
+        }
+
+        // Local Storage-la irundhu data edukkum function
+        function displayData() {
+            const savedData = localStorage.getItem("userData");
+
+            if (savedData) {
+                const data = JSON.parse(savedData);
+
+                output.textContent =
+                    "Name: " + data.name +
+                    " | Email: " + data.email;
+
+                console.log("STATUS 2: Saved data retrieved", data);
+            } else {
+                output.textContent = "No saved data found";
+                console.log("STATUS: No saved data");
+            }
+        }
+
+        // Submit click pannumbothu save pannuvom
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            console.log("STATUS 0: Submit button clicked");
+
+            saveData();
+        });
+
+        // Page refresh/open aagumbothu old data display aagum
+        displayData();
+    </script>
+
+</body>
+</html>
