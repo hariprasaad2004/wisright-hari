@@ -1,12 +1,10 @@
-import './App.css'
-import CourceList from './CourceList.jsx'
+
+import CourceList from "./CourceList";
 
 function App() {
-
-  return (<>
-    <CourceList/>
-
-
-  </>)
+  return (
+    <CourceList />
+  );
 }
-export default App
+
+export default App;

@@ -4,10 +4,14 @@ import CSS from './assets/css.png'
 import JS from './assets/js.jpg'
 import React from './assets/react.png'
 import Node from './assets/node.png'
+import {useState} from 'react';
+import {useEffect} from 'react';
+
 
 function CourceList() {
 
-    const cources = [
+
+    const [cources, setCources] = useState([
         {
             name: "HTML",
             description: "HyperText Markup Language",
@@ -34,10 +38,24 @@ function CourceList() {
             image:Node
         }
 
-    ]
+    ]);
 
-    const courceList = cources.map((cource, index) => {
-        return <Cource key={index} name={cource.name} description={cource.description} image={cource.image} />
+    useEffect(() => {
+        console.log("useeffect ");
+      },[cources]);
+
+
+    function handleDelete(index) {
+        console.log("Delete button clicked for index:", index);
+        const newCources = cources.filter((_, i) => i !== index);
+        setCources(newCources);
+    }
+
+
+
+    const courceList = cources.map((cource,index) => {
+        return <Cource key={index} name={cource.name} description={cource.description} image={cource.image} delete={()=>handleDelete(index)
+        } />
     })
     
 
